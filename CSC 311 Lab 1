@@ -1,0 +1,71 @@
+// Vehicle.java
+public class Vehicle {
+    private int numberOfWheels;
+    private String color;
+    private float engineSize;
+    private String fuelType;
+
+    // Constructor
+    public Vehicle(int numberOfWheels, String color, float engineSize, String fuelType) {
+        this.numberOfWheels = numberOfWheels;
+        this.color = color;
+        this.engineSize = engineSize;
+        this.fuelType = fuelType;
+    }
+
+    // Get / Set
+    public int getNumberOfWheels() { return numberOfWheels; }
+    public void setNumberOfWheels(int numberOfWheels) { this.numberOfWheels = numberOfWheels; }
+
+    public String getColor() { return color; }
+    public void setColor(String color) { this.color = color; }
+
+    public float getEngineSize() { return engineSize; }
+    public void setEngineSize(float engineSize) { this.engineSize = engineSize; }
+
+    public String getFuelType() { return fuelType; }
+    public void setFuelType(String fuelType) { this.fuelType = fuelType; }
+}
+
+// Car.java
+public class Car extends Vehicle {
+    private String brand;
+
+    // Constructor
+    public Car(int numberOfWheels, String color, float engineSize, String fuelType, String brand) {
+        super(numberOfWheels, color, engineSize, fuelType);
+        this.brand = brand;
+    }
+
+    // Getter / Setter for brand
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
+
+    // Honk Method
+    public void honk() {
+        System.out.println("Honk, honk!");
+    }
+
+    // Display vehicle information
+    public void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Number of Wheels: " + getNumberOfWheels());
+        System.out.println("Color: " + getColor());
+        System.out.println("Engine Size: " + getEngineSize() + "L");
+        System.out.println("Fuel Type: " + getFuelType());
+    }
+}
+
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // Vehicle object
+        Vehicle vehicle = new Vehicle(4, "Red", 2.0f, "Gasoline");
+        System.out.println("Vehicle Created: " + vehicle.getColor() + " vehicle with " + vehicle.getNumberOfWheels() + " wheels.");
+
+        // Car object
+        Car car = new Car(4, "Blue", 1.8f, "Gasoline", "Toyota");
+        car.displayInfo();
+        car.honk();
+    }
+}
