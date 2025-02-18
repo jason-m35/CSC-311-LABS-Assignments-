@@ -1,0 +1,16 @@
+.root {
+    -fx-background-color: #F49;
+}
+
+#welcomeText {
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-rotate: 30;
+}
+
+.button {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
